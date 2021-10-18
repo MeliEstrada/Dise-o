@@ -1,0 +1,67 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.DetailsPropietarioModel
+@{
+}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+<body>
+<br> 
+<br>
+<br>  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+     <img src="https://i.pinimg.com/564x/fc/ee/d4/fceed4e698f3069c8e0370e679667a04.jpg" align="right" class="img-circle person" width="400" height="200">
+    </div>
+    <div class="col-sm-8 border shadow p-4 rounded bg-light" style="background-image: url('https://i.pinimg.com/originals/79/42/9b/79429b1afb072dae4cf076859c97aa49.jpg');" >
+            <div class="row d-flex justify-content-center">
+                <div class="col-6">
+                 @Html.Raw(@ViewData["Respuesta"])
+                </div>
+            </div>
+       
+<div>
+
+<h2>@Model.Propietario.Nombre @Model.Propietario.Apellidos</h2>
+<form method="post">
+    <input type="hidden" asp-for="Propietario.Id"/>
+    <div class="form-group">
+        Nombre: @Model.Propietario.Nombre
+    </div >
+    <div class="form-group">
+        Apellido(s): @Model.Propietario.Apellidos
+    </div>
+    <div class="form-group">
+        Identificación: @Model.Propietario.Identificacion
+    </div>
+    <div class="form-group">
+        Número de Teléfono: @Model.Propietario.NumeroTelefono
+    </div>
+    <div class="form-group">
+        Correo Electrónico: @Model.Propietario.CorreoElectronico
+    </div>
+    <div class="form-group">
+        Dirección: @Model.Propietario.Direccion
+    </div>
+    <button
+        type="submit"
+        class="btn btn-primary">
+        Eliminar Propietario &nbsp; &nbsp;
+        <i class="fas fa-trash fa-lg"></i>
+    </button>
+</form>
+<a asp-page="./ListPropietarios" class="btn-default">Lista de Propietarios</a>
+
+    
+</body>

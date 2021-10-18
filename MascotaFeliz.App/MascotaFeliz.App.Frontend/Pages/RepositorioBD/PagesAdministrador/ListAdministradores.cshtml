@@ -1,0 +1,93 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.ListAdministradoresModel
+@{
+}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+<body>
+<br> 
+<br>
+<br>  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+     <img src="https://i.pinimg.com/564x/a9/c5/46/a9c546e6db9a61bfce5a2aabc1eeb1fb.jpg" class="img-circle person" width="300" height="500">
+    </div>
+    <div class="col-sm-8 border shadow p-4 rounded bg-light" style="background-image: url('https://i.pinimg.com/originals/79/42/9b/79429b1afb072dae4cf076859c97aa49.jpg');" >
+            <div class="row d-flex justify-content-center">
+                <div class="col-6">
+                 @Html.Raw(@ViewData["Respuesta"])
+                </div>
+            </div>
+       
+<div>
+
+<h1>Listado de Administradores</h1>
+<form method="get">
+    <div class="form-group">
+        <p>
+            Filtro:
+            <input type="text" name="filtroBusqueda" asp-for="FiltroBusqueda"/>
+            <button
+                type="submit"
+                class="btn btn-primary">
+                Filtrar &nbsp; &nbsp;
+                <i class="fas fa-filter fa-lg"></i>
+            </button>
+        </p>
+    </div>
+</form>
+<table class="table">
+    <tr>
+        <td><b>Nombre Completo</b></td>
+        <td><b>Número de Teléfono</b></td>
+        <td><b>Correo Electrónico</b></td>
+        <td><b>Detalles</b></td>
+        <td><b>Actualizar</b></td>
+    <tr>
+    @foreach (var administrador in Model.Administradores)
+    {
+        <tr>
+            <td>@administrador.Nombre @administrador.Apellidos</td>
+            <td>@administrador.NumeroTelefono</td>
+            <td>@administrador.CorreoElectronico</td>
+            <td>
+                <a 
+                    class="btn btn-primary table-btn" 
+                    asp-page="./DetailsAdministrador"
+                    asp-route-administradorId="@administrador.Id">
+                    <i class="fas fa-search-plus fa-lg"></i>
+                    @* Detalles del Administrador *@
+                </a>
+            </td>
+            <td>
+                <a 
+                    class="btn btn-primary table-btn" 
+                    asp-page="./EditAdministrador"
+                    asp-route-administradorId="@administrador.Id">
+                    <i class="fas fa-address-book fa-lg" aria-hidden="true"></i>
+                    @* Actualizar Administrador *@
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+<a
+    asp-page="./EditAdministrador"
+    class="btn btn-primary">
+    Crear Nuevo Administrador &nbsp; &nbsp;
+    <i class="fas fa-file-medical fa-lg"></i>
+</a>
+    
+</body>

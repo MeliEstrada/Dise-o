@@ -1,0 +1,90 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.EditMascotaModel
+@{
+}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+<body>
+<br> 
+<br>
+<br>  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+     <img src="https://i.pinimg.com/564x/8a/e5/96/8ae59647b7001507b4a51da5898addff.jpg" align="right" class="img-circle person" width="400" height="200">
+    </div>
+    <div class="col-sm-8 border shadow p-4 rounded bg-light" style="background-image: url('https://i.pinimg.com/originals/79/42/9b/79429b1afb072dae4cf076859c97aa49.jpg');" >
+            <div class="row d-flex justify-content-center">
+                <div class="col-6">
+                 @Html.Raw(@ViewData["Respuesta"])
+                </div>
+            </div>
+       
+<div>
+
+
+
+<h2>Datos de la Mascota: @Model.Mascota.Nombre (@Model.Mascota.TipoMascota)</h2>
+<form method="post">
+    <input type="hidden" asp-for="Mascota.Id"/>
+    <div class="form-group">
+        <label asp-for="Mascota.PropietarioId">Propietario:</label>
+        <select name="Mascota.PropietarioId" asp-for="Mascota.PropietarioId" class="form-control">
+            @foreach (var propietario in Model.Propietarios)
+            {
+                <option value="@propietario.Id">@propietario.Nombre @propietario.Apellidos</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="Mascota.Nombre">Nombre:</label>
+        <input asp-for="Mascota.Nombre" class="form-control">
+        <span class="text-danger" asp-validation-for="Mascota.Nombre"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Mascota.TipoMascota">Tipo de Mascota:</label><br>
+        <input type="radio" id="perro" asp-for="Mascota.TipoMascota" value="Perro">
+        <label for="perro">Perro</label><br>
+        <input type="radio" id="gato" asp-for="Mascota.TipoMascota" value="Gato">
+        <label for="gato">Gato</label><br>
+        <span class="text-danger" asp-validation-for="Mascota.TipoMascota"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Mascota.Raza">Raza:</label>
+        <input asp-for="Mascota.Raza" class="form-control">
+        <span class="text-danger" asp-validation-for="Mascota.Raza"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Mascota.Genero">Género:</label><br>
+        <input type="radio" id="macho" asp-for="Mascota.Genero" value="Macho">
+        <label for="macho">Macho</label><br>
+        <input type="radio" id="hembra" asp-for="Mascota.Genero" value="Hembra">
+        <label for="hembra">Hembra</label><br>
+        <span class="text-danger" asp-validation-for="Mascota.Genero"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Mascota.AnioNacimiento">Año de Nacimiento:</label>
+        <input asp-for="Mascota.AnioNacimiento" class="form-control">
+        <span class="text-danger" asp-validation-for="Mascota.AnioNacimiento"></span>
+    </div>
+    <button
+        type="submit"
+        class="btn btn-primary">
+        Guardar Cambios &nbsp; &nbsp;
+        <i class="fas fa-save fa-lg"></i>
+    </button>
+</form>
+<a asp-page="./ListMascotas" class="btn-default">Lista de Mascotas</a>
+    
+</body>

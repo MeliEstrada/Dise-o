@@ -1,0 +1,143 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.ListVeterinariosModel
+@{
+}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<h2 class="text-center"><font color=#3baced><i class="fas fa-paw"></i>NUESTROS VETERINARIOS<i class="fas fa-paw"></i></font></h2><br>
+
+<div class="row">
+    <div class="col-sm-4">
+        <p class="text-center"><strong><i class="fas fa-cat"></i>
+                <font color=#3baced>Juanita Guarnizo</font>
+            </strong></p><br>
+        <a href="#demo" data-toggle="collapse">
+            <img src="https://i.pinimg.com/564x/ab/75/e7/ab75e7761052956ed8ef1a8fe9496caa.jpg" class="img-circle person"
+                alt="Random Name" width="255" height="255">
+        </a>
+        <div id="demo" class="collapse">
+            <p>Veterinaria</p>
+            <p><i class="fas fa-paw"></i><strong>Desde niña supo que su sueño era cuidar a las
+                    mascotas</strong><i class="fas fa-paw"></i></p>
+            <p>Colaboradora Desde 2019</p>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <p class="text-center"><strong><i class="fas fa-band-aid"></i>
+                <font color=#3baced>Samuel Marin</font>
+            </strong></p><br>
+        <a href="#demo2" data-toggle="collapse">
+            <img src="https://aumag.org/wp-content/uploads/2018/06/Evan-Antin-3.jpg" class="img-circle person"
+                alt="Random Name" width="255" height="255">
+        </a>
+        <div id="demo2" class="collapse">
+            <p>Veterinario</p>
+            <p><i class="fas fa-paw"></i><strong>Cada día amo más mi trabajo</strong><i class="fas fa-paw"></i>
+            </p>
+            <p>Colaborador Desde 2021</p>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <p class="text-center"><strong><i class="fas fa-dog"></i>
+                <font color=#3baced>Miguel Angel Moreno</font>
+            </strong></p><br>
+        <a href="#demo3" data-toggle="collapse">
+            <img src="https://i.pinimg.com/564x/7b/cc/fa/7bccfad3469724d869f7b6ef428b3db7.jpg" class="img-circle person"
+                alt="Random Name" width="255" height="255">
+        </a>
+        <div id="demo3" class="collapse">
+            <p>Veterinario</p>
+            <p><i class="fas fa-paw"></i><strong>Me apasiona ver sus caritas felices</strong><i class="fas fa-paw"></i></p>
+            <p>Colaborador Desde 2020</p>
+        </div>
+    </div>
+</div>
+</div>
+
+<body>
+<br> 
+<br>
+<br>  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+     <img src="https://aumag.org/wp-content/uploads/2018/06/Evan-Antin-3.jpg" class="img-circle person" width="300" height="500">
+    </div>
+    <div class="col-sm-8 border shadow p-4 rounded bg-light" style="background-image: url('https://i.pinimg.com/originals/79/42/9b/79429b1afb072dae4cf076859c97aa49.jpg');" >
+            <div class="row d-flex justify-content-center">
+                <div class="col-6">
+                 @Html.Raw(@ViewData["Respuesta"])
+                </div>
+            </div>
+       
+<div>
+
+<h1>Listado de Veterinarios</h1>
+<form method="get">
+    <div class="form-group">
+        <p>
+            Filtro:
+            <input type="text" name="filtroBusqueda" asp-for="FiltroBusqueda"/>
+            <button
+                type="submit"
+                class="btn btn-primary">
+                Filtrar &nbsp; &nbsp;
+                <i class="fas fa-filter fa-lg"></i>
+            </button>
+        </p>
+    </div>
+</form>
+<table class="table">
+    <tr>
+        <td><b>Nombre Completo</b></td>
+        <td><b>Número de Teléfono</b></td>
+        <td><b>Correo Electrónico</b></td>
+        <td><b>Detalles</b></td>
+        <td><b>Actualizar</b></td>
+    <tr>
+    @foreach (var veterinario in Model.Veterinarios)
+    {
+        <tr>
+            <td>@veterinario.Nombre @veterinario.Apellidos</td>
+            <td>@veterinario.NumeroTelefono</td>
+            <td>@veterinario.CorreoElectronico</td>
+            <td>
+                <a 
+                    class="btn btn-primary table-btn" 
+                    asp-page="./DetailsVeterinario"
+                    asp-route-veterinarioId="@veterinario.Id">
+                    <i class="fas fa-search-plus fa-lg"></i>
+                    @* Detalles Veterinario *@
+                </a>
+            </td>
+            <td>
+                <a 
+                    class="btn btn-primary table-btn" 
+                    asp-page="./EditVeterinario"
+                    asp-route-veterinarioId="@veterinario.Id">
+                    <i class="fas fa-address-book fa-lg" aria-hidden="true"></i>
+                    @* Actualizar Veterinario *@
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+<a
+    asp-page="./EditVeterinario"
+    class="btn btn-primary">
+    Crear Nuevo Veterinario &nbsp; &nbsp;
+    <i class="fas fa-file-medical fa-lg"></i>
+</a>
+</div>
+
+</body>

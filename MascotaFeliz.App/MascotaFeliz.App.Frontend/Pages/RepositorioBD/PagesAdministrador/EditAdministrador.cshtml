@@ -1,0 +1,73 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.EditAdministradorModel
+@{
+}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+<body>
+<br> 
+<br>
+<br>  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+     <img src="https://i.pinimg.com/564x/a9/c5/46/a9c546e6db9a61bfce5a2aabc1eeb1fb.jpg" class="img-circle person" width="300" height="500">
+    </div>
+    <div class="col-sm-8 border shadow p-4 rounded bg-light" style="background-image: url('https://i.pinimg.com/originals/79/42/9b/79429b1afb072dae4cf076859c97aa49.jpg');" >
+            <div class="row d-flex justify-content-center">
+                <div class="col-6">
+                 @Html.Raw(@ViewData["Respuesta"])
+                </div>
+            </div>
+       
+<div>
+
+
+        
+
+<h2>Datos del Administrador: @Model.Administrador.Nombre @Model.Administrador.Apellidos</h2>
+<form method="post">
+    <input type="hidden" asp-for="Administrador.Id"/>
+    <div class="form-group">
+        <label asp-for="Administrador.Nombre">Nombre:</label>
+        <input asp-for="Administrador.Nombre" class="form-control">
+        <span class="text-danger" asp-validation-for="Administrador.Nombre"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Administrador.Apellidos">Apellidos:</label>
+        <input asp-for="Administrador.Apellidos" class="form-control">
+        <span class="text-danger" asp-validation-for="Administrador.Apellidos"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Administrador.NumeroTelefono">Número de Teléfono:</label>
+        <input asp-for="Administrador.NumeroTelefono" class="form-control">
+        <span class="text-danger" asp-validation-for="Administrador.NumeroTelefono"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Administrador.CorreoElectronico">Correo Electrónico:</label>
+        <input asp-for="Administrador.CorreoElectronico" class="form-control">
+        <span class="text-danger" asp-validation-for="Administrador.CorreoElectronico"></span>
+    </div>
+    <button
+        type="submit"
+        class="btn btn-primary">
+        Guardar Cambios &nbsp; &nbsp;
+        <i class="fas fa-save fa-lg"></i>
+    </button>
+</form>
+<a asp-page="./ListAdministradores" class="btn-default">Lista de Administradores</a>
+  </section>
+
+    
+</body>

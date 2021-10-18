@@ -1,0 +1,48 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.EditConsultaProvisionalModel
+@{
+}
+<h2>Datos de la Consulta ( Id @Model.ConsultaDomiciliaria.Id ): @Model.ConsultaDomiciliaria.Hora</h2>
+<form method="post">
+    <input type="hidden" asp-for="ConsultaDomiciliaria.Id"/>
+    <div class="form-group">
+        <label asp-for="mascotaId">Mascota:</label>
+        <select name="mascotaId" asp-for="mascotaId" class="form-control">
+            @foreach (var mascota in Model.Mascotas)
+            {
+                <option value="@mascota.Id">@mascota.Nombre (@mascota.TipoMascota)</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="veterinarioId">Veterinario:</label>
+        <select name="veterinarioId" asp-for="veterinarioId" class="form-control">
+            @foreach (var veterinario in Model.Veterinarios)
+            {
+                <option value="@veterinario.Id">@veterinario.Nombre @veterinario.Apellidos</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="ConsultaDomiciliaria.Fecha">Fecha:</label>
+        <input asp-for="ConsultaDomiciliaria.Fecha" class="form-control">
+        <span class="text-danger" asp-validation-for="ConsultaDomiciliaria.Fecha"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ConsultaDomiciliaria.Hora">Hora:</label>
+        <input asp-for="ConsultaDomiciliaria.Hora" class="form-control">
+        <span class="text-danger" asp-validation-for="ConsultaDomiciliaria.Hora"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ConsultaDomiciliaria.Temperatura">Temperatura:</label>
+        <input asp-for="ConsultaDomiciliaria.Temperatura" class="form-control">
+        <span class="text-danger" asp-validation-for="ConsultaDomiciliaria.Temperatura"></span>
+    </div>
+     <div class="form-group">
+        <label asp-for="ConsultaDomiciliaria.Peso">Peso:</label>
+        <input asp-for="ConsultaDomiciliaria.Peso" class="form-control">
+        <span class="text-danger" asp-validation-for="ConsultaDomiciliaria.Peso"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Grabar</button>
+</form>
+<a asp-page="./ListConsultasProvisional" class="btn-default">Lista de Consultas</a>

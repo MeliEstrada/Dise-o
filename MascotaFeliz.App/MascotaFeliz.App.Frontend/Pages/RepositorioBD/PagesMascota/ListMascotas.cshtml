@@ -1,0 +1,140 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.ListMascotasModel
+@{
+}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<div class="row text-center">
+        <div class="col-sm-4">
+            <div class="thumbnail">
+                <div class="Vacunacion">
+                    <img src="https://www.lavanguardia.com/files/image_449_220/uploads/2019/10/25/5fa52ef8267ad.jpeg"
+                        alt="Vacunacion" alt="Random Name" width="240" height="240">
+                    <p><strong>
+                            <font color=#3baced>Vacunación </font>
+                        </strong></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="thumbnail">
+                <div class="VisitasDomiciliarias">
+                    <img src="https://www.mascotaysalud.com/images/2.jpg" alt="VisitasDomiciliarias" alt="Random Name"
+                        width="240" height="240">
+                    <p><strong>
+                            <font color=#3baced>Visitas Domiciliarias</font>
+                        </strong></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="thumbnail">
+                <div class="Esterilizacion">
+                    <img src="https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/2021-01/purina-5-beneficios-de-la-esterilizacion-de-perros-y-gatos-0.png?itok=WxA-We-A"
+                        alt="Esterilizacion" alt="Random Name" width="240" height="240">
+                    <p><strong>
+                            <font color=#3baced>Esterilización</font>
+                        </strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+<body>
+<br> 
+<br>
+<br>  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+     <img src="https://i.pinimg.com/564x/8a/e5/96/8ae59647b7001507b4a51da5898addff.jpg" align="right" class="img-circle person" width="400" height="200">
+    </div>
+    <div class="col-sm-8 border shadow p-4 rounded bg-light" style="background-image: url('https://i.pinimg.com/originals/79/42/9b/79429b1afb072dae4cf076859c97aa49.jpg');" >
+            <div class="row d-flex justify-content-center">
+                <div class="col-6">
+                 @Html.Raw(@ViewData["Respuesta"])
+                </div>
+            </div>
+       
+<div>
+
+
+<h1>Listado de Mascotas</h1>
+<form method="get">
+    <div class="form-group">
+        <p>
+            Filtro:
+            <input type="text" name="filtroBusqueda" asp-for="FiltroBusqueda"/>
+            <button
+                type="submit"
+                class="btn btn-primary">
+                Filtrar &nbsp; &nbsp;
+                <i class="fas fa-filter fa-lg"></i>
+            </button>
+        </p>
+    </div>
+</form>
+<table class="table">
+    <tr>
+        <td><b>Nombre</b></td>
+        <td><b>Tipo De Mascota</b></td>
+        <td><b>Raza</b></td>
+        <td><b>Genero</b></td>
+        <td><b>Propietario</b></td>
+        <td><b>Detalles</b></td>
+        <td><b>Actualizar</b></td>
+    <tr>
+    @foreach (var mascota in Model.Mascotas)
+    {
+        <tr>
+            <td>@mascota.Nombre</td>
+            <td>@mascota.TipoMascota</td>
+            <td>@mascota.Raza</td>
+            <td>@mascota.Genero</td>
+            <td>@Model.GetNombreApellidosPropietario(mascota.PropietarioId)</td>
+            <td>
+                <a 
+                    class="btn btn-primary table-btn"
+                    asp-page="./DetailsMascota"
+                    asp-route-mascotaId="@mascota.Id">
+                    <i class="fas fa-search-plus fa-lg"></i>
+                    @* Detalles Mascota *@
+                </a>
+            </td>
+            <td>
+                <a
+                    class="btn btn-primary table-btn"
+                    asp-page="./EditMascota"
+                    asp-route-mascotaId="@mascota.Id">
+                    <i class="fas fa-address-book fa-lg" aria-hidden="true"></i>
+                    @* Actualizar Mascota *@
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+<a
+    asp-page="./EditMascota"
+    class="btn btn-primary">
+    Crear Nueva Mascota &nbsp; &nbsp;
+    <i class="fas fa-file-medical fa-lg"></i>
+</a>
+
+
+</body>

@@ -1,0 +1,109 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<div class="text-center">
+   <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="https://i.pinimg.com/originals/81/c4/42/81c44232d4f75dc69ad65322064220dc.jpg"
+                    alt="Amamos Tus Mascotas">
+                <div class="carousel-caption">
+                    <h3><font color=#3baced> Mascota Feliz</font></h3>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://i.pinimg.com/originals/ca/2e/b7/ca2eb700cda27e05dbb9eec79a277100.jpg"
+                    alt="Todo Por Amor">
+                <div class="carousel-caption">
+                    <h3><font color=#3baced> Los Cuidamos Por Ti </font></h3>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://postgradoveterinaria.com/wp-content/uploads/Escuela-Postgrado-Veterinaria.jpg"
+                    alt="Por Amor">
+                <div class="carousel-caption">
+                    <h3><font color=#3baced> Siempre Para Ti</font></h3>
+                </div>
+            </div>
+
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+ 
+    <div id="band" class="container text-center">
+        <h3><font color=#3baced><i class="fas fa-paw"></i>MASCOTA FELIZ<i class="fas fa-paw"></font></i></h3>
+        <p>
+        <p><em>AMAMOS A TUS MASCOTAS</em></p>
+        </p>
+        <p><b>Prestamos servicios médicos veterinarios a mascotas, el eje central de servicio es la atención
+                personalizada y la realización de procesos y procedimientos bajo altos estándares de calidad.
+                Trabajamos arduamente en la detección, prevención y mejoramiento de la salud y el bienestar de
+                las mascotas y sus propietarios, para lo cual contamos con un equipo médico conformado por profesionales
+                veterinarios. 
+        </b></p>        
+        <p><b>Nuestro eslogan es “AMAMOS A SUS MASCOTAS”, por lo que todo el equipo humano que conforma
+                el centro, está encaminado a realizar su trabajo con mucho amor por los pacientes, buscando
+                constantemente
+                soluciones que le permitan mayor bienestar y la buena salud de estos; además, el excelente trato a
+                sus propietarios, seguimiento permanente al progreso de la mascota y ayudas diagnósticas en tiempo
+                real.
+        </b></p>
+       </div>
+
+<div id="VeterinarioMes" class="container text-center">
+    <p><strong><i class="fas fa-band-aid"></i>
+            <font color=#3baced>Nuestro Veterinario Del Mes</font>
+        </strong></p><br>
+    <img src="https://i.pinimg.com/564x/02/09/df/0209dfd65498f01d5916efd3e876abd5.jpg" class="img-circle person"
+        alt="Random Name" width="255" height="255">
+    <p><i class="fas fa-paw"></i><strong>Gracias Por Tu Buena Labor</strong><i class="fas fa-paw"></i>
+    </p>
+</div>
+
+<div id="InformacionDesarrolladores" class="container text-center">
+    <p class="text-center"><strong><i class="fas fa-band-aid"></i>
+            <h3><i class="far fa-address-card">&nbsp;&nbsp;</i>
+                <font color=#3baced>Datos De Contacto</font>
+            </h3><br>
+            <p class="text-center"> </p><strong>
+                <p class="text-center"><em>Comunicate Con Nosotros Para Hacer Tu Proyecto</em></p><br><br>
+                <p class="text-center">Juan C. Carvajal. &nbsp;&nbsp;&nbsp;&nbsp; <span class="glyphicon glyphicon-envelope"> </span>Email:
+                    juanc.carvajal72@gmail.com</p><br>
+                <p class="text-center">Melissa A. Estrada. &nbsp;&nbsp;&nbsp;&nbsp; <span class="glyphicon glyphicon-envelope"></span>Email:
+                    melissa.30614256623@ucaldas.edu.co</p><br>
+                <p class="text-center">Daniela Becerra. &nbsp;&nbsp;&nbsp;&nbsp; <span class="glyphicon glyphicon-envelope"> </span>Email:
+                    danielabecerrasosa@gmail.com</p><br>
+                <p class="text-center">Robin Benitez M. &nbsp;&nbsp;&nbsp;&nbsp; <span class="glyphicon glyphicon-envelope"> </span>Email:
+                    robinbenitez1990@gmail.com
+                </p><br>
+                <p class="text-center">Andrea J. Solarte.&nbsp;&nbsp;&nbsp;&nbsp; <span class="glyphicon glyphicon-envelope"> </span>Email:
+                    andrea.solarte72@gmail.com</p><br>
+            </strong>
+    </p>
+</div>

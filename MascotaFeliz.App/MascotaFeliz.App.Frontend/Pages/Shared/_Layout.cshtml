@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Mascota Feliz App</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="color-palette.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <header>
+
+<div class="container-header" class="container text-center">
+    <img src="https://i.pinimg.com/564x/f1/cf/bd/f1cfbdc78ba9130117c311d91fc30745.jpg" alt="LogoEmpresa"
+        class="img-circle person" width="160" height="100">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-phone-alt"></i>Telefono
+    5364-75647&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-periscope"></i> Direccion: Crra 6 15-80 Villa alegria
+    &nbsp;&nbsp;&nbsp;&nbsp; <i class="fab fa-whatsapp"></i> Whatssap: 321457683
+    </a>
+</div>
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm  border-bottom box-shadow mb-3">
+                  
+            <div class="container-fluid bg-primary">
+
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Mascota Feliz App</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                       
+                        @*<li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/MemoriaProvisional/Administrador/ListAdministradoresProvisional">Administradores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/MemoriaProvisional/Veterinario/ListVeterinariosProvisional">Veterinarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/MemoriaProvisional/Propietario/ListPropietariosProvisional">Propietarios de Mascotas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/MemoriaProvisional/Mascota/ListMascotasProvisional">Mascotas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/MemoriaProvisional/ConsultaDomiciliaria/ListConsultasProvisional">Consultas Domiciliarias</a>
+                        </li>*@
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/RepositorioBD/PagesAdministrador/ListAdministradores"><b><i
+                                        class="fas fa-paw"></i>Administradores</b></a>
+                        </li>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/RepositorioBD/PagesVeterinario/ListVeterinarios"><b><i
+                                        class="fas fa-paw"></i>Veterinarios</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/RepositorioBD/PagesPropietario/ListPropietarios"><b><i
+                                        class="fas fa-paw"></i>Propietarios de Mascotas</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/RepositorioBD/PagesMascota/ListMascotas"><b><i
+                                        class="fas fa-paw"></i>Mascotas</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/RepositorioBD/PagesConsultaDomiciliaria/ListConsultas"><b><i
+                                        class="fas fa-paw"></i>Consultas Domiciliarias</b></a>
+                        </li>
+                               
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+<footer class="text-center">
+        <div>
+        <a class="up-arrow" href="#TeamPanther" data-toggle="tooltip" title="TO TOP">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a><br><br>
+        <p> Made By Team Panther <a href="https://misiontic.ucaldas.edu.co/" target="_blank">
+                >MisiónTic 2022</a></p>
+        <p> &copy; 2021 <a asp-area="" asp-page="/Privacy">Privacy</a></p>
+    </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+    
+</body>
+</html>
