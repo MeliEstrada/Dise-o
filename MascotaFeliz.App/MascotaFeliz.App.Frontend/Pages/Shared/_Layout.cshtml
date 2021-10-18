@@ -12,10 +12,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </head>
-<body>
+<body id="TeamPanther">
     <header>
 
-<div class="container-header" class="container text-center">
+<div class="container-header bg-light" class="container text-center">
     <img src="https://i.pinimg.com/564x/f1/cf/bd/f1cfbdc78ba9130117c311d91fc30745.jpg" alt="LogoEmpresa"
         class="img-circle person" width="160" height="100">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-phone-alt"></i>Telefono
@@ -28,15 +28,12 @@
                   
             <div class="container-fluid bg-primary">
 
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Mascota Feliz App</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                       
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index"><b><i
+                                        class="fas fa-paw"></i>Home</b></a>
+                        </li>
                         @*<li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/MemoriaProvisional/Administrador/ListAdministradoresProvisional">Administradores</a>
                         </li>
